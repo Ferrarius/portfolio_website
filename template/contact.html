@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Laurens Smid portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="template/layout.css" type="text/css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">Over</a></li>
+        <li><a href="kennis.php">Kennis</a></li>
+        <li><a href="projecten.php">Projecten</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php" class="buttonActivated">Contact</a></li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <div class="container">
+        <!-- START BLOCK : SQLERROR -->
+        <p>{GETLINE}
+            {GETFILE}
+            {GETMESSAGE}</p>
+        <!-- END BLOCK : SQLERROR -->
+        <!-- START BLOCK : SENDSUCCES -->
+        <div class="blockSUCCES">
+            <p>Uw bericht is verzonden</p>
+        </div>
+        <!-- END BLOCK : SENDSUCCES -->
+        <!-- START BLOCK : SENDERROR -->
+        <div class="blockERROR">
+            <p>U moet alle velden invullen</p>
+        </div>
+        <!-- END BLOCK : SENDERROR -->
+        <h2>Bericht versturen</h2>
+        <form action="../contact.php" method="POST">
+            <table>
+                <tr>
+                    <td>Naam:</td>
+                    <td><input type="text" name="naam" maxlength="45"/></td>
+                </tr>
+                <tr>
+                    <td>E-mail adres:</td>
+                    <td><input type="email" class="email" name="email" maxlength="100"/></td>
+                </tr>
+                <tr>
+                    <td>Onderwerp:</td>
+                    <td><input type="text" name="onderwerp" maxlength="100"/></td>
+                </tr>
+                <tr>
+                    <td>Bericht:</td>
+                    <td><textarea name="bericht" cols="30" rows="5" maxlength="255"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="sendButton" name="verzenden" value="verzenden"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- START BLOCK : SESSION -->
+<div class="logoutButton">
+    <a href="logout.php">Uitloggen</a>
+</div>
+<div class="blockSESSION">
+    <a href="panel_check.php">{GEBRUIKERSNAAM}</a>
+</div>
+<!-- END BLOCK : SESSION -->
+<!-- START BLOCK : LOGINREG -->
+<div id="loginButton">
+    <a href="login.php">Inloggen</a>
+</div>
+<div id="registerButton">
+    <a href="register.php">Registreren</a>
+</div>
+<!-- END BLOCK : LOGINREG -->
+</body>
+</html>

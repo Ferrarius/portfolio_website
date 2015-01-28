@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inloggen - Laurens Smid portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="template/layout.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">Over</a></li>
+        <li><a href="kennis.php">Kennis</a></li>
+        <li><a href="projecten.php">Projecten</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <div class="container">
+        <!-- START BLOCK : SQLERROR -->
+        <div class="blockERROR">
+        <p>{GETLINE}
+        {GETFILE}
+        {GETMESSAGE}</p>
+        </div>
+        <!-- END BLOCK : SQLERROR -->
+        <!-- START BLOCK : LOGINSUCCES -->
+
+        <div class="blockSUCCES">
+            <p>U bent succesvol ingelogd</p>
+        </div>
+
+        <!-- END BLOCK : LOGINSUCCES -->
+
+        <!-- START BLOCK : SESSIONERROR -->
+
+        <div class="blockERROR">
+            <p>U bent al ingelogd</p>
+        </div>
+
+        <!-- END BLOCK : SESSIONERROR -->
+
+        <!-- START BLOCK : LOGINERROR -->
+
+        <div class="blockERROR">
+            <p>Combinatie gebruikersnaam en wachtwoord bestaat niet</p>
+        </div>
+
+        <!-- END BLOCK : LOGINERROR -->
+
+        <!-- START BLOCK : LOGINERROR2 -->
+
+        <div class="blockERROR">
+            <p>Gebruikersnaam en wachtwoord moeten ingevult zijn</p>
+        </div>
+
+        <!-- END BLOCK : LOGINERROR2 -->
+
+        <form action="../login.php" method="post">
+            <table>
+                <tr>
+                    <td class="label">Gebruikersnaam:</td>
+                    <td><input type="text" name="gebruikersnaam"></td>
+                </tr>
+                <tr>
+                    <td class="label">Wachtwoord:</td>
+                    <td><input type="password" name="wachtwoord"></td>
+                </tr>
+                <tr>
+                    <td id="recovery"><a href="recovery.html">Inloggegevens vergeten?</a></td>
+                    <td><input class="sendButton" type="submit" name="login" value="Inloggen"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- START BLOCK : SESSION -->
+<div class="logoutButton">
+    <a href="logout.php">Uitloggen</a>
+</div>
+<div class="blockSESSION">
+    <a href="panel_check.php">{GEBRUIKERSNAAM}</a>
+</div>
+<!-- END BLOCK : SESSION -->
+<!-- START BLOCK : LOGINREG -->
+<div id="loginButton">
+    <a href="login.php">Inloggen</a>
+</div>
+<div id="registerButton">
+    <a href="register.php">Registreren</a>
+</div>
+<!-- END BLOCK : LOGINREG -->
+</body>
+</html>

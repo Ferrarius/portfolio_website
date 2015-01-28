@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog - Laurens Smid portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="template/layout.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">Over</a></li>
+        <li><a href="kennis.php">Kennis</a></li>
+        <li><a href="projecten.php">Projecten</a></li>
+        <li><a href="blog.php" class="buttonActivated">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <div class="container">
+        <!-- START BLOCK : SQLERROR -->
+        <p>{GETLINE}<br/>{GETFILE}<br/>{GETMESSAGE}</p>
+        <!-- END BLOCK : SQLERROR -->
+        <h2>Blog</h2>
+        <!-- START BLOCK : BLOG -->
+        <!-- START BLOCK : LEEG -->
+        <p>{GEENBLOGS}</p>
+        <!-- END BLOCK : LEEG -->
+        <table>
+            <tr>
+                <td>Datum:</td>
+                <td>{DATUM}</td>
+            </tr>
+            <tr>
+                <td class="tdblock">Titel:</td>
+                <td class="break">{TITEL}</td>
+            </tr>
+            <tr>
+                <td class="tdblock">Inhoud:</td>
+                <td class="break">{INHOUD}</td>
+            </tr>
+        </table>
+        <hr/>
+        <!-- END BLOCK : BLOG -->
+    </div>
+</div>
+<!-- START BLOCK : SESSION -->
+<div class="logoutButton">
+    <a href="logout.php">Uitloggen</a>
+</div>
+<div class="blockSESSION">
+    <a href="panel_check.php">{GEBRUIKERSNAAM}</a>
+</div>
+<!-- END BLOCK : SESSION -->
+<!-- START BLOCK : LOGINREG -->
+<div id="loginButton">
+    <a href="login.php">Inloggen</a>
+</div>
+<div id="registerButton">
+    <a href="register.php">Registreren</a>
+</div>
+<!-- END BLOCK : LOGINREG -->
+</body>
+</html>	

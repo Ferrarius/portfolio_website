@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registreren - Laurens Smid portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="template/layout.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">Over</a></li>
+        <li><a href="kennis.php">Kennis</a></li>
+        <li><a href="projecten.php">Projecten</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <div class="container">
+
+        <!-- START BLOCK : SQLERROR -->
+        <p>{GETLINE}
+            {GETFILE}
+            {GETMESSAGE}</p>
+        <!-- END BLOCK : SQLERROR -->
+
+        <!-- START BLOCK : REGERROR -->
+
+        <div class="blockERROR">
+            <p>U moet elk verplicht veld invullen aangegeven met '*'</p>
+        </div>
+
+        <!-- END BLOCK : REGERROR -->
+        <!-- START BLOCK : REGERROR2 -->
+
+        <div class="blockERROR">
+            <p>Er is al een account geregistreerd met deze gebruikersnaam</p>
+        </div>
+
+        <!-- END BLOCK : REGERROR2 -->
+
+        <!-- START BLOCK : GEBRUIKER -->
+
+        <div id="blockGEBRUIKER">
+            <p>Welkom {VOORNAAM}. <br> U bent geregistreerd als {GEBRUIKERSNAAM} <br> met e-mail adres {EMAIL}</p>
+            <p>U word naar de homepage gestuurd</p>
+        </div>
+
+        <!-- END BLOCK : GEBRUIKER -->
+
+        <form action="register.php" method="post">
+            <table>
+                <tr>
+                    <td class="label">*Gebruikersnaam:</td>
+                    <td><input type="text" name="gebruikersnaam"></td>
+                </tr>
+                <tr>
+                    <td class="label">*Wachtwoord:</td>
+                    <td><input type="password" name="wachtwoord"></td>
+                </tr>
+                <tr>
+                    <td class="label">*Voornaam:</td>
+                    <td><input type="text" name="voornaam"></td>
+                </tr>
+                <tr>
+                    <td class="label">Tussenvoegsel:</td>
+                    <td><input type="text" name="tussenvoegsel"></td>
+                </tr>
+                <tr>
+                    <td class="label">*Achternaam:</td>
+                    <td><input type="text" name="achternaam"></td>
+                </tr>
+                <tr>
+                    <td class="label">*Geslacht:</td>
+                    <td><input type="radio" name="geslacht" value="man" id="man"><label for="man">Man</label>
+                        <input type="radio" name="geslacht" value="vrouw" id="vrouw"><label for="vrouw">Vrouw</label></td>
+                <tr>
+                    <td class="label">*Geboortedatum:</td>
+                    <td><input id="geboortedatum" type="date"  name="geboortedatum"></td>
+                </tr>
+                <tr>
+                    <td class="label">*E-mail adres:</td>
+                    <td><input class="email" type="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="sendButton" type="submit" name="registreren" value="Registreren"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- START BLOCK : SESSION -->
+<div class="logoutButton">
+    <a href="logout.php">Uitloggen</a>
+</div>
+<div class="blockSESSION">
+    <a href="panel_check.php">{GEBRUIKERSNAAM}</a>
+</div>
+<!-- END BLOCK : SESSION -->
+<!-- START BLOCK : LOGINREG -->
+<div id="loginButton">
+    <a href="login.php">Inloggen</a>
+</div>
+<div id="registerButton">
+    <a href="register.php">Registreren</a>
+</div>
+<!-- END BLOCK : LOGINREG -->
+</body>
+</html>

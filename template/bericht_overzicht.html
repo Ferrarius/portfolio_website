@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Berichten - Laurens Smid portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="template/layout.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">Over</a></li>
+        <li><a href="kennis.php">Kennis</a></li>
+        <li><a href="projecten.php">Projecten</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+    </ul>
+</nav>
+<div id="wrapper">
+    <div class="container">
+        <!-- START BLOCK : SQLERROR -->
+        <div class="blockERROR">
+            <p>{GETLINE}
+                {GETFILE}
+                {GETMESSAGE}</p>
+        </div>
+        <!-- END BLOCK : SQLERROR -->
+        <h2>Berichten</h2>
+        <!-- START BLOCK : BERICHTEN -->
+        <div id="verwijderknop" class="link">
+            <a href="bericht_verwijderen.php?id={ID}">Verwijderen</a>
+        </div>
+        <table class="table">
+            <tr>
+                <td>Datum:</td>
+                <td>{DATUM}</td>
+            </tr>
+            <tr>
+                <td>Naam:</td>
+                <td>{NAAM}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{EMAIL}</td>
+            </tr>
+            <tr>
+                <td class="tdblock">Onderwerp:</td>
+                <td class="break">{ONDERWERP}</td>
+            </tr>
+            <tr>
+                <td class="tdblock">Bericht:</td>
+                <td class="break">{BERICHT}</td>
+            </tr>
+        </table>
+        <hr/>
+        <!-- END BLOCK : BERICHTEN -->
+    </div>
+</div>
+<!-- START BLOCK : SESSION -->
+<div class="logoutButton">
+    <a href="logout.php">Uitloggen</a>
+</div>
+<div class="blockSESSION">
+    <a href="">{GEBRUIKERSNAAM}</a>
+</div>
+<!-- END BLOCK : SESSION -->
+<!-- START BLOCK : LOGINREG -->
+<div id="loginButton">
+    <a href="login.php">Inloggen</a>
+</div>
+<div id="registerButton">
+    <a href="register.php">Registreren</a>
+</div>
+<!-- END BLOCK : LOGINREG -->
+</body>
+</html>
